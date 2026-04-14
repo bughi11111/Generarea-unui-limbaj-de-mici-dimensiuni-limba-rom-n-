@@ -1,0 +1,45 @@
+## Arhitectura
+
+## Stratul sintactic
+
+Defineste structura unei propozitii:
+
+- Propozitia = Subiect (Grup Nominal) + Predicat (Grup Verbal)
+- Grupul Nominal = Articol + Substantiv + optional Adjectiv
+- Grupul Verbal = Verb + optional obiect
+
+## Stratul de acord
+
+Foloseste variabila Gen pentru a lega elementele intre ele. Daca un substantiv e feminin, sistemul cauta un articol si un adjectiv tot din categoria feminin. Asta previne erori de tipul "un capra" sau "o mar".
+
+## Stratul lexical
+
+Baza de date cu cuvinte. Fiecare cuvant e etichetat cu:
+
+- Partea de vorbire (Substantiv, Verb, Adjectiv, Articol)
+- Genul (Masculin, Feminin, Neutru)
+
+
+## Componente principale
+
+| Componenta | Descriere | Exemple |
+|
+| Grup Nominal | Entitatea despre care vorbim | "un mar", "o capra frumoasa" |
+| Grup Verbal | Actiunea executata | "mananca", "merge la Moieciu" |
+| Dictionar | Lista de cuvinte brute | "mar", "capra", "mulge", "mic" |
+
+---
+
+## Exemple de functionare
+
+Structura simpla
+
+
+articol(masculin) + substantiv(masculin) + verb
+=> "un mar merge"
+
+Structura complexa
+
+
+articol(feminin) + substantiv(feminin) + adjectiv(feminin) + verb
+=> "o capra frumoasa mananca"
