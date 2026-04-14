@@ -1,36 +1,35 @@
-propozitie --> subiect(Gen), predicat(Gen).
 
-subiect(Gen) --> articol(Gen), substantiv(Gen).
-subiect(Gen) --> articol(Gen), substantiv(Gen), adjectiv(Gen).
-
-subiect(masculin) --> substantiv(propriu, masculin).
-
-predicat --> verb.
-predicat --> verb, subiect.
+propozitie --> grup_verbal, grup_nominal.
+grup_nominal --> articol(Gen), substantiv(Gen).
+grup_nominal --> articol(Gen), substantiv(Gen), adjectiv(Gen).
+grup_verbal --> verb.
+grup_verbal --> verb, grup_nominal.
 
 
-substantiv --> ['Moieciu'].
-substantiv --> ['Adi'].
-substantiv --> [mar].
-substantiv --> [capra].
-    
+
+% Substantive
+substantiv(masculin) --> [mar].
+substantiv(masculin) --> ['Adi'].
+substantiv(feminin)  --> [capra].
+substantiv(neutru)   --> ['Moieciu'].
+
+% Verbe 
 verb --> [mananca].
 verb --> [mulge].
 verb --> [merge].
-    
-articol --> [la].
-articol --> [in].
-articol --> [o].
-articol --> [un].
-articol --> [cu].
 
+% Articole (Etichetate pe genuri)
+articol(masculin) --> [un].
+articol(masculin) --> [cu].
+articol(feminin)  --> [o].
+articol(feminin)  --> [la].
+articol(neutru)   --> [in].
+
+% Adjective (Etichetate pe genuri)
 adjectiv(masculin) --> [mic].
-adjectiv(masculin) --> [mare].
-adjectiv(masculin) --> [frumos].
 adjectiv(masculin) --> [gustos].
-adjectiv(feminin) --> [mica].
-adjectiv(feminin) --> [mare].
-adjectiv(feminin) --> [frumoasa].
-adjectiv(feminin) --> [gustoasa].
-    
+adjectiv(feminin)  --> [mica].
+adjectiv(feminin)  --> [frumoasa].
+adjectiv(neutru)   --> [mare].
+adjectiv(neutru)   --> [frumos].
 
